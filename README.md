@@ -66,6 +66,9 @@ curl -o $CRASHDIR/CrashCore.tar.gz -L https://ghfast.top/https://github.com/NasP
 
 连接 SSH 后执行如下命令：
 ```
+curl -L https://ghfast.top/https://github.com/NasPilot/proxy-tools/releases/download/Dashboard/zashboard.tar.gz | tar -zx -C $CRASHDIR/ui/ && $CRASHDIR/start.sh restart
+```
+```
 curl -L https://ghfast.top/https://github.com/NasPilot/proxy-tools/releases/download/Dashboard/metacubexd.tar.gz | tar -zx -C $CRASHDIR/ui/ && $CRASHDIR/start.sh restart
 ```
 - 注：若使用基于 [Chromium 项目](https://www.chromium.org/Home/)开发的浏览器打开网址去访问 Dashboard 面板时，以 [Chrome 浏览器](https://www.google.com/chrome/)为例，需要设置该网址域名“允许显示不安全内容”。方法如下：  
