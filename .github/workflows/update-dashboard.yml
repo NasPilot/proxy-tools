@@ -20,12 +20,12 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@main
 
-    - name: Get `yacd` version and time
-      run: |
-        yacd_version=$(curl -sSL https://api.github.com/repos/haishanh/yacd/releases/latest | jq -r '.tag_name')
-        echo "yacd_version=$yacd_version" >> ${GITHUB_ENV}
-        yacd_time=$(curl -sSL https://api.github.com/repos/haishanh/yacd/releases/latest | jq -r '.created_at' | xargs -I {} date -d '{} +8 hours' '+%Y-%m-%d')
-        echo "yacd_time=$yacd_time" >> ${GITHUB_ENV}
+    #- name: Get `yacd` version and time
+    #  run: |
+    #    yacd_version=$(curl -sSL https://api.github.com/repos/haishanh/yacd/releases/latest | jq -r '.tag_name')
+    #    echo "yacd_version=$yacd_version" >> ${GITHUB_ENV}
+    #    yacd_time=$(curl -sSL https://api.github.com/repos/haishanh/yacd/releases/latest | jq -r '.created_at' | xargs -I {} date -d '{} +8 hours' '+%Y-%m-%d')
+    #    echo "yacd_time=$yacd_time" >> ${GITHUB_ENV}
 
     - name: Get `Yacd-meta` version and time
       run: |
@@ -48,12 +48,12 @@ jobs:
         zashboard_time=$(curl -sSL https://api.github.com/repos/Zephyruso/zashboard/releases/latest | jq -r '.created_at' | xargs -I {} date -d '{} +8 hours' '+%Y-%m-%d')
         echo "zashboard_time=$zashboard_time" >> ${GITHUB_ENV}
 
-    - name: Download and compress `yacd` dashboard
-      run: |
-        mkdir -p ./Dashboard/ ./tmp/yacd/
-        curl -o ./tmp/yacd/gh-pages.zip -L https://github.com/haishanh/yacd/archive/refs/heads/gh-pages.zip
-        unzip -o ./tmp/yacd/gh-pages.zip -d ./tmp/yacd/
-        tar -czf ./Dashboard/yacd.tar.gz -C ./tmp/yacd/yacd-gh-pages/ .
+    #- name: Download and compress `yacd` dashboard
+    #  run: |
+    #    mkdir -p ./Dashboard/ ./tmp/yacd/
+    #    curl -o ./tmp/yacd/gh-pages.zip -L https://github.com/haishanh/yacd/archive/refs/heads/gh-pages.zip
+    #    unzip -o ./tmp/yacd/gh-pages.zip -d ./tmp/yacd/
+    #    tar -czf ./Dashboard/yacd.tar.gz -C ./tmp/yacd/yacd-gh-pages/ .
 
     - name: Download and compress `Yacd-meta` dashboard
       run: |
