@@ -27,12 +27,12 @@ jobs:
     #    yacd_time=$(curl -sSL https://api.github.com/repos/haishanh/yacd/releases/latest | jq -r '.created_at' | xargs -I {} date -d '{} +8 hours' '+%Y-%m-%d')
     #    echo "yacd_time=$yacd_time" >> ${GITHUB_ENV}
 
-    - name: Get `Yacd-meta` version and time
-      run: |
-        yacd_meta_version=$(curl -sSL https://api.github.com/repos/MetaCubeX/Yacd-meta/releases/latest | jq -r '.tag_name')
-        echo "yacd_meta_version=$yacd_meta_version" >> ${GITHUB_ENV}
-        yacd_meta_time=$(curl -sSL https://api.github.com/repos/MetaCubeX/Yacd-meta/releases/latest | jq -r '.created_at' | xargs -I {} date -d '{} +8 hours' '+%Y-%m-%d')
-        echo "yacd_meta_time=$yacd_meta_time" >> ${GITHUB_ENV}
+    #- name: Get `Yacd-meta` version and time
+    #  run: |
+    #    yacd_meta_version=$(curl -sSL https://api.github.com/repos/MetaCubeX/Yacd-meta/releases/latest | jq -r '.tag_name')
+    #    echo "yacd_meta_version=$yacd_meta_version" >> ${GITHUB_ENV}
+    #    yacd_meta_time=$(curl -sSL https://api.github.com/repos/MetaCubeX/Yacd-meta/releases/latest | jq -r '.created_at' | xargs -I {} date -d '{} +8 hours' '+%Y-%m-%d')
+    #    echo "yacd_meta_time=$yacd_meta_time" >> ${GITHUB_ENV}
 
     - name: Get `metacubexd` version and time
       run: |
@@ -55,12 +55,12 @@ jobs:
     #    unzip -o ./tmp/yacd/gh-pages.zip -d ./tmp/yacd/
     #    tar -czf ./Dashboard/yacd.tar.gz -C ./tmp/yacd/yacd-gh-pages/ .
 
-    - name: Download and compress `Yacd-meta` dashboard
-      run: |
-        mkdir -p ./tmp/Yacd-meta/
-        curl -o ./tmp/Yacd-meta/gh-pages.zip -L https://github.com/MetaCubeX/Yacd-meta/archive/refs/heads/gh-pages.zip
-        unzip -o ./tmp/Yacd-meta/gh-pages.zip -d ./tmp/Yacd-meta/
-        tar -czf ./Dashboard/Yacd-meta.tar.gz -C ./tmp/Yacd-meta/Yacd-meta-gh-pages/ .
+    #- name: Download and compress `Yacd-meta` dashboard
+    #  run: |
+    #    mkdir -p ./tmp/Yacd-meta/
+    #    curl -o ./tmp/Yacd-meta/gh-pages.zip -L https://github.com/MetaCubeX/Yacd-meta/archive/refs/heads/gh-pages.zip
+    #    unzip -o ./tmp/Yacd-meta/gh-pages.zip -d ./tmp/Yacd-meta/
+    #    tar -czf ./Dashboard/Yacd-meta.tar.gz -C ./tmp/Yacd-meta/Yacd-meta-gh-pages/ .
 
     - name: Download and compress `metacubexd` dashboard
       run: |
